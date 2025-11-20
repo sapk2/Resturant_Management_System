@@ -20,7 +20,7 @@ class TableResource extends Resource
 {
     protected static ?string $model = Table1::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Cog;
 
     protected static ?string $recordTitleAttribute = 'Table';
 

@@ -20,7 +20,7 @@ class BillsResource extends Resource
 {
     protected static ?string $model = Bills::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::DocumentCurrencyRupee;
 
     protected static ?string $recordTitleAttribute = 'Bills';
 

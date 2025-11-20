@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Bills\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class BillsInfolist
@@ -11,6 +12,8 @@ class BillsInfolist
     {
         return $schema
             ->components([
+                Section::make("Bills Infos")
+                ->schema([
                 TextEntry::make('order_id')
                     ->numeric(),
                 TextEntry::make('total_amount')
@@ -19,10 +22,10 @@ class BillsInfolist
                 TextEntry::make('payment_status'),
                 TextEntry::make('paid_at')
                     ->date(),
-                TextEntry::make('created_at')
-                    ->dateTime(),
-                TextEntry::make('updated_at')
-                    ->dateTime(),
+                    
+                ]),
+
+                
             ]);
     }
 }

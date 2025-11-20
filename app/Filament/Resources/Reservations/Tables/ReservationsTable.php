@@ -15,7 +15,7 @@ class ReservationsTable
     {
         return $table
             ->columns([
-                TextColumn::make('table_id')
+                TextColumn::make('table.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('customer_name')

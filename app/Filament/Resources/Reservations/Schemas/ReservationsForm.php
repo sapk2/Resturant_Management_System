@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Reservations\Schemas;
 
+use App\Models\Table;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -13,9 +14,7 @@ class ReservationsForm
     {
         return $schema
             ->components([
-                TextInput::make('table_id')
-                    ->required()
-                    ->numeric(),
+                 Select::make('table_id')->label('table')->options(Table::query()->pluck('name','id'))->searchable(),
                 TextInput::make('customer_name')
                     ->required(),
                 TextInput::make('phone')

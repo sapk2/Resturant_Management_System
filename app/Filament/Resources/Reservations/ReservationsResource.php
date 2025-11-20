@@ -20,7 +20,7 @@ class ReservationsResource extends Resource
 {
     protected static ?string $model = Reservations::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BookmarkSquare;
 
     public static function form(Schema $schema): Schema
     {

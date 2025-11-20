@@ -20,7 +20,7 @@ class InventoriesResource extends Resource
 {
     protected static ?string $model = Inventories::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingStorefront;
 
     protected static ?string $recordTitleAttribute = 'Inventories';
 

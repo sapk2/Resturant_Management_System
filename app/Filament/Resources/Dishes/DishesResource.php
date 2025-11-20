@@ -20,7 +20,7 @@ class DishesResource extends Resource
 {
     protected static ?string $model = Dishes::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::CircleStack;
 
     protected static ?string $recordTitleAttribute = 'Dishes';
 

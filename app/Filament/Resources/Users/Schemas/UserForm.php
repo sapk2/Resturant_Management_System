@@ -16,7 +16,7 @@ class UserForm
                 TextInput::make('email')->unique(),
                 TextInput::make('password')->password(),
                 Select::make('role')->options(['admin'=>'admin','manager'=>'manager','waiter'=>'waiter','chef'=>'chef','cashier'=>'caisher']),
-                TextInput::make('phone')->required()->tel()
+                TextInput::make('phone')->nullable()->tel()
             ]);
     }
 }

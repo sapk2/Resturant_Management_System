@@ -20,7 +20,7 @@ class OrderItemsResource extends Resource
 {
     protected static ?string $model = OrderItems::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::InboxArrowDown;
 
     protected static ?string $recordTitleAttribute = 'OrderItems';
 

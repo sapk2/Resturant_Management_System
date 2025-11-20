@@ -6,6 +6,7 @@ use App\Models\Order;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class BillsForm
@@ -14,7 +15,8 @@ class BillsForm
     {
         return $schema
             ->components([
-                Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id'))->searchable(),
+                Section::make("Field")->schema([
+Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id'))->searchable(),
                 TextInput::make('total_amount')
                     ->required()
                     ->numeric(),
@@ -26,6 +28,8 @@ class BillsForm
                     ->required(),
                 DatePicker::make('paid_at')
                     ->required(),
+                ])->columns(2),
+                
             ]);
     }
 }
