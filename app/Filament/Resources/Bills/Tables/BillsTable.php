@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Bills\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -17,21 +18,22 @@ class BillsTable
             ->columns([
                 TextColumn::make('order_id')
                     ->numeric()
+                    ->searchable()
                     ->sortable(),
                 TextColumn::make('total_amount')
-                    ->numeric()
+                    ->numeric()->searchable()
                     ->sortable(),
                 TextColumn::make('payment_type'),
                 TextColumn::make('payment_status'),
                 TextColumn::make('paid_at')
-                    ->date()
+                    ->date()->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime()->searchable()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->dateTime()->searchable()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -41,6 +43,7 @@ class BillsTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

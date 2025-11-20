@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Bills\Schemas;
 
 use App\Models\Order;
+use Filament\Forms\Components\Concerns\HasHelperText;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -16,9 +17,10 @@ class BillsForm
         return $schema
             ->components([
                 Section::make("Field")->schema([
-Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id'))->searchable(),
+                Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id'))->searchable(),
                 TextInput::make('total_amount')
                     ->required()
+                    ->helperText('enter total amount')
                     ->numeric(),
                 Select::make('payment_type')
                     ->options(['cash' => 'Cash', 'card' => 'Card', 'online' => 'Online'])
@@ -28,6 +30,7 @@ Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id
                     ->required(),
                 DatePicker::make('paid_at')
                     ->required(),
+               
                 ])->columns(2),
                 
             ]);

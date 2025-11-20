@@ -50,9 +50,9 @@ class BillsResource extends Resource
     {
         return [
             'index' => ListBills::route('/'),
-            'create' => CreateBills::route('/create'),
-            'view' => ViewBills::route('/{record}'),
-            'edit' => EditBills::route('/{record}/edit'),
+            //'create' => CreateBills::route('/create'),
+            //'view' => ViewBills::route('/{record}'),
+            //'edit' => EditBills::route('/{record}/edit'),
         ];
     }
 }
