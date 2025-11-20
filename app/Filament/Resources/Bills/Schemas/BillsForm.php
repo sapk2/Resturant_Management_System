@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Filament\Resources\Bills\Schemas;
+
+use App\Models\Order;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+
+class BillsForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                Select::make('order_id')->label('order')->options(Order::query()->pluck('id','id'))->searchable(),
+                TextInput::make('total_amount')
+                    ->required()
+                    ->numeric(),
+                Select::make('payment_type')
+                    ->options(['cash' => 'Cash', 'card' => 'Card', 'online' => 'Online'])
+                    ->required(),
+                Select::make('payment_status')
+                    ->options(['paid' => 'Paid', 'unpaid' => 'Unpaid'])
+                    ->required(),
+                DatePicker::make('paid_at')
+                    ->required(),
+            ]);
+    }
+}
