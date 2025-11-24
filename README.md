@@ -1,4 +1,4 @@
-# 🍽️ Restaurant Management System (Laravel)
+# 🍽️ Restaurant Management System (Laravel/ Filament)
 
 A complete production-ready **Restaurant / Hotel management system** built in **Laravel**, with multi-role dashboards including Admin, Manager, Chef, Waiter, and Cashier. The system manages orders, tables, reservations, inventory, billing, and reporting.
 
@@ -30,25 +30,10 @@ A complete production-ready **Restaurant / Hotel management system** built in **
 * View assigned tables
 * Update status (served)
 * View reservations
+🧰 Tech Stack
 
-## 👨‍🍳 Chef / Kitchen Panel
+Backend: Laravel
 
-* View orders waiting to be cooked
-* Update status (pending → preparing → ready)
-* Time tracking per order
-* Notify waiters when ready
+UI: Filament  Panel
 
-## 💰 Cashier Panel
-
-* View completed orders
-* Generate & print bills (POS style)
-* Accept payments (cash, card, online)
-* Mark orders as paid
-* Daily revenue summary
-
-## 🧑‍🤝‍🧑 Customer Features
-
-* View menu
-* About us
-* Make a reservation
-* Contact form
+Database: MySQL
