@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\Orders\Tables;
+namespace App\Filament\Manager\Resources\Orders\Tables;
 
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -16,10 +15,10 @@ class OrdersTable
     {
         return $table
             ->columns([
-                TextColumn::make('table.name')
-                    ->label('name')
+                TextColumn::make('table_id')
+                    ->numeric()
                     ->sortable(),
-                TextColumn::make('user.name')
+                TextColumn::make('user_id')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('Status'),
@@ -41,7 +40,6 @@ class OrdersTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
-                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

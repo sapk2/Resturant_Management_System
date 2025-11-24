@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\Orders\Tables;
+namespace App\Filament\Waiter\Resources\Orders\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -20,7 +19,7 @@ class OrdersTable
                     ->label('name')
                     ->sortable(),
                 TextColumn::make('user.name')
-                    ->numeric()
+                    ->label('waiter name')
                     ->sortable(),
                 TextColumn::make('Status'),
                 TextColumn::make('total_amount')
@@ -39,7 +38,6 @@ class OrdersTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make()
             ])

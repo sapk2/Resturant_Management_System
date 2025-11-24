@@ -1,31 +1,33 @@
 <?php
 
-namespace App\Filament\Resources\Orders\Tables;
+namespace App\Filament\Waiter\Resources\OrderItems\Tables;
 
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class OrdersTable
+class OrderItemsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('table.name')
-                    ->label('name')
-                    ->sortable(),
-                TextColumn::make('user.name')
+                TextColumn::make('id')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('Status'),
-                TextColumn::make('total_amount')
-                    ->numeric()
+                TextColumn::make('dish.name')
+                    ->label('Dish Name')
+    ->sortable()
                     ->sortable(),
+                TextColumn::make('quantity')
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->searchable(),
+                TextColumn::make('subtotal')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -41,7 +43,6 @@ class OrdersTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
-                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

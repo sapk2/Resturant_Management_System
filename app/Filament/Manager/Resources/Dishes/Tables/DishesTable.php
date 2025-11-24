@@ -1,31 +1,33 @@
 <?php
 
-namespace App\Filament\Resources\Orders\Tables;
+namespace App\Filament\Manager\Resources\Dishes\Tables;
 
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class OrdersTable
+class DishesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('table.name')
-                    ->label('name')
-                    ->sortable(),
-                TextColumn::make('user.name')
+                TextColumn::make('menu_id')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('Status'),
-                TextColumn::make('total_amount')
-                    ->numeric()
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->money()
                     ->sortable(),
+                ImageColumn::make('image'),
+                IconColumn::make('is_available')
+                    ->boolean(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -39,9 +41,8 @@ class OrdersTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-                DeleteAction::make()
+               // ViewAction::make(),
+               // EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

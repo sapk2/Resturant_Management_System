@@ -16,7 +16,7 @@ class OrderItems extends Model
     public function Order(){
         return $this->belongsTo(Order::class);
     }
-    public function dishes(){
-        return $this->hasMany(Dishes::class);
+    public function dish(){
+        return $this->belongsTo(Dishes::class,'dishes_id');
     }
 }

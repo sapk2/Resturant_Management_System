@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Filament\Waiter\Resources\Reservations\Pages;
+
+use App\Filament\Waiter\Resources\Reservations\ReservationsResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateReservations extends CreateRecord
+{
+    protected static string $resource = ReservationsResource::class;  protected static bool $canCreateAnother = false;
+    protected function getRedirectUrl(): string
+{
+    return $this->getResource()::getUrl('index');
+}
+}

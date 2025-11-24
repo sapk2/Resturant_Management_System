@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Filament\Waiter\Resources\Orders\Pages;
+
+use App\Filament\Waiter\Resources\Orders\OrderResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateOrder extends CreateRecord
+{
+    protected static string $resource = OrderResource::class;
+    protected static bool $canCreateAnother = false;
+    protected function getRedirectUrl(): string
+{
+    return $this->getResource()::getUrl('index');
+}
+}

@@ -19,13 +19,13 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class ManagerPanelProvider extends PanelProvider
+class WaiterPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('manager')
-            ->path('manager')
+            ->id('waiter')
+            ->path('waiter')
             ->login()
            // ->topNavigation()
             ->sidebarWidth('15rem')
@@ -34,17 +34,17 @@ class ManagerPanelProvider extends PanelProvider
             ->emailChangeVerification()
             ->errorNotifications(false)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Emerald,
             ])
-            ->discoverResources(in: app_path('Filament/Manager/Resources'), for: 'App\Filament\Manager\Resources')
-            ->discoverPages(in: app_path('Filament/Manager/Pages'), for: 'App\Filament\Manager\Pages')
+            ->discoverResources(in: app_path('Filament/Waiter/Resources'), for: 'App\Filament\Waiter\Resources')
+            ->discoverPages(in: app_path('Filament/Waiter/Pages'), for: 'App\Filament\Waiter\Pages')
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Manager/Widgets'), for: 'App\Filament\Manager\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Waiter/Widgets'), for: 'App\Filament\Waiter\Widgets')
             ->widgets([
-               // AccountWidget::class,
-                //FilamentInfoWidget::class,
+                AccountWidget::class,
+                FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
