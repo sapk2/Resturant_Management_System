@@ -43,8 +43,8 @@ class MenuResource extends Resource
     {
         return [
             'index' => ListMenus::route('/'),
-            'create' => CreateMenu::route('/create'),
-            'edit' => EditMenu::route('/{record}/edit'),
+            //'create' => CreateMenu::route('/create'),
+            //'edit' => EditMenu::route('/{record}/edit'),
         ];
     }
 }

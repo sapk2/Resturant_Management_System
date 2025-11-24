@@ -48,9 +48,9 @@ class ReservationsResource extends Resource
     {
         return [
             'index' => ListReservations::route('/'),
-            'create' => CreateReservations::route('/create'),
-            'view' => ViewReservations::route('/{record}'),
-            'edit' => EditReservations::route('/{record}/edit'),
+            //'create' => CreateBills::route('/create'),
+            //'view' => ViewBills::route('/{record}'),
+            //'edit' => EditBills::route('/{record}/edit'),
         ];
     }
 }

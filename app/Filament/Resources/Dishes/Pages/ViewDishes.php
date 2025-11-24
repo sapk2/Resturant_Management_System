@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Dishes\Pages;
 
 use App\Filament\Resources\Dishes\DishesResource;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -13,7 +14,11 @@ class ViewDishes extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            // EditAction::make(),
+           Action::make('back')
+           ->label('Back')
+           ->url(DishesResource::getUrl('index'))
+           ->color('sucess')->icon('heroicon-o-arrow-left')
         ];
     }
 }

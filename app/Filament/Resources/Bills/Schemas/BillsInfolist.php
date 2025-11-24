@@ -21,10 +21,8 @@ class BillsInfolist
                 TextEntry::make('payment_type'),
                 TextEntry::make('payment_status'),
                 TextEntry::make('paid_at')
-                    ->date(),
-                    
+                    ->date(),  
                 ]),
-
                 
             ]);
     }

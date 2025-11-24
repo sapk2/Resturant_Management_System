@@ -50,9 +50,9 @@ class DishesResource extends Resource
     {
         return [
             'index' => ListDishes::route('/'),
-            'create' => CreateDishes::route('/create'),
-            'view' => ViewDishes::route('/{record}'),
-            'edit' => EditDishes::route('/{record}/edit'),
+            //'create' => CreateDishes::route('/create'),
+            //'view' => ViewDishes::route('/{record}'),
+            //'edit' => EditDishes::route('/{record}/edit'),
         ];
     }
 }

@@ -21,5 +21,5 @@ class ViewBills extends ViewRecord
            ->url(BillsResource::getUrl('index'))
            ->color('sucess')->icon('heroicon-o-arrow-left')
         ];
-    }
+    }   
 }

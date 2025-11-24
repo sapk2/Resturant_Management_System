@@ -50,9 +50,9 @@ class OrderResource extends Resource
     {
         return [
             'index' => ListOrders::route('/'),
-            'create' => CreateOrder::route('/create'),
-            'view' => ViewOrder::route('/{record}'),
-            'edit' => EditOrder::route('/{record}/edit'),
+            //'create' => CreateOrder::route('/create'),
+           // 'view' => ViewOrder::route('/{record}'),
+           // 'edit' => EditOrder::route('/{record}/edit'),
         ];
     }
 }
