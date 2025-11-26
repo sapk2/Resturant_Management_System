@@ -7,7 +7,9 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 
 class BillsTable
@@ -38,7 +40,18 @@ class BillsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Filter::make('created_at')
+                ->label("creation date")
+                ->schema([
+                    DatePicker::make("created_at")
+                    ->label("select Date:")
+                ])
+                ->query(function($query, $data) {
+                    return $query
+                    ->when($data["created_at"],function($q,$data){
+                        $q->whereDate("created_at",$data);
+                    });
+                })
             ])
             ->recordActions([
                 ViewAction::make(),
